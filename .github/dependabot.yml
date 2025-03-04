@@ -1,0 +1,33 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # 📦 Keep npm dependencies up to date
+  - package-ecosystem: "npm"
+    directory: "/"  # Root directory (where package.json is)
+    schedule:
+      interval: "weekly"  # Check for updates once a week
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "npm"
+    reviewers:
+      - "your-github-username"  # Add yourself or contributors as reviewers
+    commit-message:
+      prefix: "⬆️ Bump"
+      include: "scope"  # Includes dependency name in commit message
+
+  # 🔒 Check for security updates in GitHub Actions (workflow dependencies)
+  - package-ecosystem: "github-actions"
+    directory: "/"  # Root directory (where workflows are)
+    schedule:
+      interval: "weekly"
+    labels:
+      - "security"
+      - "github-actions"
+    commit-message:
+      prefix: "🔄 Update"
+      include: "scope"
