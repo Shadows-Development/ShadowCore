@@ -1,12 +1,13 @@
 # ShadowCore  
+
+ShadowCore is a **modular core framework** for Discord bot development. It provides a streamlined system for **commands, events, buttons, menus, middleware execution, API requests, and more**, making bot development faster and more efficient.
+
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/Shadows-Development/ShadowCore?style=flat-square)  
 ![GitHub issues](https://img.shields.io/github/issues/Shadows-Development/ShadowCore?style=flat-square)  
 ![GitHub forks](https://img.shields.io/github/forks/Shadows-Development/ShadowCore?style=flat-square)  
 ![GitHub stars](https://img.shields.io/github/stars/Shadows-Development/ShadowCore?style=flat-square)  
 ![GitHub license](https://img.shields.io/github/license/Shadows-Development/ShadowCore?style=flat-square)  
 ![npm version](https://img.shields.io/npm/v/shadow-core?style=flat-square)  
-
-ShadowCore is a **modular core framework** for Discord bot development. It provides a streamlined system for **commands, events, buttons, menus, middleware execution, API requests, and more**, making bot development faster and more efficient.
 
 ## 🌟 Features
 - 🚀 **Modular Command System** - Auto-loads commands from categorized folders.
