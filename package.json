@@ -1,0 +1,28 @@
+{
+  "name": "gd-core",
+  "version": "1.1.2",
+  "description": "A modular core for Discord bots with commands, buttons, and menus.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Grey",
+  "license": "MIT",
+  "keywords": [
+    "discord",
+    "bot",
+    "typescript",
+    "core"
+  ],
+  "dependencies": {
+    "axios": "^1.8.1",
+    "discord.js": "^14.8.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  }
+}
