@@ -1,14 +1,15 @@
 # ShadowCore  
-![GitHub package.json version](https://img.shields.io/github/package-json/v/GreyDevOps/shadow-core?style=flat-square)  
-![GitHub issues](https://img.shields.io/github/issues/GreyDevOps/shadow-core?style=flat-square)  
-![GitHub forks](https://img.shields.io/github/forks/GreyDevOps/shadow-core?style=flat-square)  
-![GitHub stars](https://img.shields.io/github/stars/GreyDevOps/shadow-core?style=flat-square)  
-![GitHub license](https://img.shields.io/github/license/GreyDevOps/shadow-core?style=flat-square)  
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Shadows-Development/ShadowCore?style=flat-square)  
+![GitHub issues](https://img.shields.io/github/issues/Shadows-Development/ShadowCore?style=flat-square)  
+![GitHub forks](https://img.shields.io/github/forks/Shadows-Development/ShadowCore?style=flat-square)  
+![GitHub stars](https://img.shields.io/github/stars/Shadows-Development/ShadowCore?style=flat-square)  
+![GitHub license](https://img.shields.io/github/license/Shadows-Development/ShadowCore?style=flat-square)  
+![npm version](https://img.shields.io/npm/v/shadow-core?style=flat-square)  
 
 ShadowCore is a **modular core framework** for Discord bot development. It provides a streamlined system for **commands, events, buttons, menus, middleware execution, API requests, and more**, making bot development faster and more efficient.
 
 ## 🌟 Features
-- 🚀 **Modular Command System** - Auto-loads commands from files.
+- 🚀 **Modular Command System** - Auto-loads commands from categorized folders.
 - 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`).
 - 🛠 **Middleware Support** - Allows pre/post-execution logic for commands.
 - ⏳ **Rate Limiting & Cooldowns** - Prevents spam and abuse.
@@ -37,8 +38,17 @@ bot.getClient().once("ready", () => {
 ```
 
 ### **Registering Commands**
-Commands are automatically loaded from the `/commands/` folder.
+Commands are automatically loaded from the `/commands/{category}/` folder.  
+Each command file must export a command object.
 
+#### **Example Command Structure:**
+```
+/commands/general/ping.ts
+/commands/admin/ban.ts
+/commands/moderation/kick.ts
+```
+
+#### **Command Example: `/commands/general/ping.ts`**
 ```ts
 import { Command } from "shadow-core";
 
@@ -80,7 +90,7 @@ This project is licensed under the **GNU General Public License v3.0**. See the 
 1. **Fork the repository** on GitHub.
 2. **Clone your fork** to your local machine:
    ```bash
-   git clone https://github.com/GreyDevOps/shadow-core.git
+   git clone https://github.com/Shadows-Development/ShadowCore.git
    ```
 3. **Create a new branch** for your changes:
    ```bash
