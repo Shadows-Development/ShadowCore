@@ -21,7 +21,7 @@
     "discord.js": "^14.8.0"
   },
   "devDependencies": {
-    "@types/axios": "^0.9.36",
+    "@types/axios": "^0.14.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.0"
   }
