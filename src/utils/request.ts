@@ -7,7 +7,7 @@ export async function apiRequest<T = any>(
   opts: RequestOptions = {}
 ): Promise<T> {
   try {
-    const config: Axios.AxiosXHRConfig<any> = {
+    const config = {
       method: opts.method || "GET", // Default to GET
       url: url,
       headers: {
