@@ -1,6 +1,6 @@
 {
-  "name": "gd-core",
-  "version": "1.1.2",
+  "name": "shadow-core",
+  "version": "0.1.0",
   "description": "A modular core for Discord bots with commands, buttons, and menus.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
