@@ -31,7 +31,15 @@ Create a bot that uses the **ShadowCore framework**.
 ```ts
 import { Bot } from "shadow-core";
 
-const bot = new Bot("YOUR_BOT_TOKEN");
+export const bot = new Bot(
+  "YOUR_BOT_TOKEN",
+  [GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.GuildIntegrations] // Any Intents you want,
+  false // Debug mode disabled,
+);
 
 bot.getClient().once("ready", () => {
     console.log(`✅ Logged in as ${bot.getClient().user?.tag}`);
