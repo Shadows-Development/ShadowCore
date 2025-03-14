@@ -11,7 +11,7 @@ ShadowCore is a **modular core framework** for Discord bot development. It provi
 
 ## 🌟 Features
 - 🚀 **Modular Command System** - Auto-loads commands from categorized folders.
-- 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`).
+- 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`). **W.I.P.**
 - 🛠 **Middleware Support** - Allows pre/post-execution logic for commands.
 - ⏳ **Rate Limiting & Cooldowns** - Prevents spam and abuse.
 - 🌐 **API Utility with Axios** - Simplifies external API requests.
@@ -62,7 +62,7 @@ export default new Command({
 });
 ```
 
-### **Handling Dynamic Buttons**
+### **Handling Dynamic Buttons** **W.I.P.**
 ```ts
 import { Button, splitSpecialId } from "shadow-core";
 
@@ -73,15 +73,6 @@ export default new Button({
         interaction.reply(`Opened ticket #${id}`);
     }
 });
-```
-
-## 🛠 Configuration
-ShadowCore allows configuration through an environment file (`.env`):
-
-```
-BOT_TOKEN=your-bot-token
-DATABASE_URL=your-database-url
-LOGGING_LEVEL=info
 ```
 
 ## 📜 License
