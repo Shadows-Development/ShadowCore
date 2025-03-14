@@ -3,23 +3,22 @@ import { Command } from "./command";
 
 export class CommandManager {
     private client: Client;
-    private static commands: Map<string, Command> = new Map(); // 🔥 Store commands globally
+    private static commands: Map<string, Command> = new Map(); // Store commands globally
 
     constructor(client: Client) {
         this.client = client;
     }
 
     registerCommand(command: Command) {
-        CommandManager.commands.set(command.name, command); // ✅ Correctly access static property
-        console.log(`✅ Registered command: ${command.name}`);
+        CommandManager.commands.set(command.name, command);
     }
 
     getCommand(commandName: string): Command | undefined {
-        return CommandManager.commands.get(commandName); // ✅ Correctly access static property
+        return CommandManager.commands.get(commandName);
     }
 
     async registerCommands(guildId?: string) {
-        const commandsArray: ApplicationCommandDataResolvable[] = Array.from(CommandManager.commands.values()); // ✅ Correct access
+        const commandsArray: ApplicationCommandDataResolvable[] = Array.from(CommandManager.commands.values());
 
         if (commandsArray.length === 0) {
             console.log("⚠️ No commands have been registered.");
@@ -44,6 +43,6 @@ export class CommandManager {
     }
 
     static getAllCommands(): Map<string, Command> {
-        return CommandManager.commands; // ✅ Provide a method to access all commands if needed
+        return CommandManager.commands; // Provide a method to access all commands if needed
     }
 }

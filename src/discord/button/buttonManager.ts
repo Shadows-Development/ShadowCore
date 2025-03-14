@@ -4,15 +4,14 @@ import { splitSpecialId } from "../util";
 
 export class ButtonManager {
   private client: Client;
-  private buttons: Map<string, Button>;
+  private static buttons: Map<string, Button> = new Map();
 
   constructor(client: Client) {
     this.client = client;
-    this.buttons = new Map();
   }
 
   registerButton(button: Button) {
-    this.buttons.set(button.customId, button);
+    ButtonManager.buttons.set(button.customId, button);
   }
 
   async handleInteraction(interaction: ButtonInteraction) {
@@ -20,12 +19,18 @@ export class ButtonManager {
     if (interaction.customId.includes(":")) {
       const parsedId = splitSpecialId(interaction.customId);
       const newId = `${parsedId.feature}:${parsedId.action}:{id}`;
-      button = this.buttons.get(newId);
+      button = ButtonManager.buttons.get(newId);
     } else {
-      button = this.buttons.get(interaction.customId);
+      button = ButtonManager.buttons.get(interaction.customId);
     }
     if (button) {
       await button.run(interaction, this.client);
+    }
+  }
+
+  static LogAllButtons(): void {
+    for (const [id, button] of ButtonManager.buttons) {
+      console.log(`Button ID: ${id}, Button Data:`, button);
     }
   }
 }

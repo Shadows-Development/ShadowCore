@@ -3,19 +3,18 @@ import { Menu } from "./menu";
 
 export class MenuManager {
     private client: Client;
-    private menus: Map<string, Menu>;
+    private static menus: Map<string, Menu> = new Map();
 
     constructor(client: Client) {
         this.client = client;
-        this.menus = new Map();
     }
 
     registerMenu(menu: Menu) {
-        this.menus.set(menu.customId, menu);
+        MenuManager.menus.set(menu.customId, menu);
     }
 
     async handleInteraction(interaction: StringSelectMenuInteraction) {
-        const menu = this.menus.get(interaction.customId);
+        const menu = MenuManager.menus.get(interaction.customId);
         if (menu) {
             await menu.run(interaction, this.client);
         }

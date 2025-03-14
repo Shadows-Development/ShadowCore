@@ -8,6 +8,7 @@ export class EventManager {
     private client: Client;
     private buttonManager: ButtonManager;
     private menuManager: MenuManager;
+    private customInteractionHandler?: (interaction: Interaction) => Promise<void>;
 
     constructor(client: Client) {
         this.client = client;
@@ -16,8 +17,6 @@ export class EventManager {
 
         this.client.on("interactionCreate", async (interaction: Interaction) => {
             if (interaction.isChatInputCommand()) {
-                console.log(`🔍 Received command: ${interaction.commandName}`);
-                console.log("📋 Currently registered commands:", Array.from(CommandManager.getAllCommands().keys()));
 
                 const command = CommandManager.getAllCommands().get(interaction.commandName);
 
@@ -39,10 +38,14 @@ export class EventManager {
             else if (interaction.isStringSelectMenu()) {
                 await this.menuManager.handleInteraction(interaction);
             }
+
+            if (this.customInteractionHandler) {
+                await this.customInteractionHandler(interaction);
+            }
         });
     }
 
-    registerEvent(event: Event<any>) {
-        this.client.on(event.event, event.run);
+    public setCustomInteractionHandler(handler: (interaction: Interaction) => Promise<void>) {
+        this.customInteractionHandler = handler;
     }
 }
