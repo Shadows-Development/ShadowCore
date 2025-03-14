@@ -111,7 +111,6 @@ This project is licensed under the **GNU General Public License v3.0**. See the 
 
 ## 🌎 Community & Support
 - **GitHub Issues** - Report bugs & request features.
-- **Discord Server** - Join the development discussion.
 
 ---
 
