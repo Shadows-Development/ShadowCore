@@ -11,8 +11,8 @@ ShadowCore is a **modular core framework** for Discord bot development. It provi
 
 ## 🌟 Features
 - 🚀 **Modular Command System** - Auto-loads commands from categorized folders.
-- 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`). **W.I.P.**
-- 🛠 **Middleware Support** - Allows pre/post-execution logic for commands.
+- 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`). 
+- 🛠 **Middleware Support** - Allows pre/post-execution logic for commands. **W.I.P.**
 - ⏳ **Rate Limiting & Cooldowns** - Prevents spam and abuse.
 - 🌐 **API Utility with Axios** - Simplifies external API requests.
 - 📜 **Logging with Loki** - Built-in structured logging.
@@ -30,19 +30,22 @@ Create a bot that uses the **ShadowCore framework**.
 
 ```ts
 import { Bot } from "shadow-core";
+import { GatewayIntentBits } from "discord.js";
 
+// Replace with your bot's token
+const token = "YOUR_BOT_TOKEN";
+
+// Initialize the bot
 export const bot = new Bot(
-  "YOUR_BOT_TOKEN",
-  [GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
-    GatewayIntentBits.GuildMembers,
-    GatewayIntentBits.GuildIntegrations] // Any Intents you want,
-  false // Debug mode disabled,
+  token,
+  [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
+  false // Debug mode disabled
 );
 
+// Log when the bot is ready
 bot.getClient().once("ready", () => {
     console.log(`✅ Logged in as ${bot.getClient().user?.tag}`);
+    bot.getCommandManager().registerCommands("GUILD_ID");
 });
 ```
 
