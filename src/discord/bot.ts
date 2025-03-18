@@ -2,7 +2,6 @@ import {
   Client,
   ClientEvents,
   GatewayIntentBits,
-  IntentsBitField,
 } from "discord.js";
 import { CommandManager } from "./command/commandManager";
 import { EventManager } from "./event/eventManager";
@@ -15,6 +14,7 @@ import { Command } from "./command";
 import { Event } from "./event";
 import { Button } from "./button";
 import { Menu } from "./menu";
+import { importFile } from "./util";
 
 export class Bot {
   private client: Client;
@@ -41,19 +41,7 @@ export class Bot {
       });
     });
   }
-  private async importFile(filePath: string) {
-    try {
-
-      if (filePath.endsWith(".js")) {
-        return require(filePath);
-      }
-
-      return (await import(filePath))?.default;
-    } catch (err) {
-      console.error(`❌ Error importing file: ${filePath}`, err);
-      return null;
-    }
-  }
+  
   private async registerModules() {
     if (this.debug) console.log("🔍 Registering modules...");
 
@@ -91,7 +79,7 @@ export class Bot {
     // Use forEach with async handling
     commandFiles.forEach(async (filePath) => {
       try {
-        const command: Command = await this.importFile(filePath);
+        const command: Command = await importFile(filePath);
         if (!command?.name) return;
 
         this.commandManager.registerCommand(command);
@@ -131,7 +119,7 @@ export class Bot {
 
     for (const filePath of eventFiles) {
       try {
-        const event: Event<keyof ClientEvents> = await this.importFile(
+        const event: Event<keyof ClientEvents> = await importFile(
           filePath
         );
         if (!event || !event.event || typeof event.run !== "function") {
@@ -168,7 +156,7 @@ export class Bot {
     });
     for (const filePath of buttonFiles) {
       try {
-        const button: Button = await this.importFile(filePath);
+        const button: Button = await importFile(filePath);
         console.log(button);
         this.buttonManager.registerButton(button);
       } catch (err) {
@@ -197,7 +185,7 @@ export class Bot {
     });
     for (const filePath of menuFiles) {
       try {
-        const menu: Menu = await this.importFile(filePath);
+        const menu: Menu = await importFile(filePath);
         this.menuManager.registerMenu(menu);
       } catch (err) {
         console.error(`❌ Error loading menu at ${filePath}:`, err);
