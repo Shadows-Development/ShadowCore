@@ -77,6 +77,7 @@ export class Command {
       }
       command.run(interaction, client, args);
     } else if (command.roles) {
+      // eslint-disable-next-line
       let roles = Array<RoleResolvable>();
 
       command.roles.forEach((role) => {
