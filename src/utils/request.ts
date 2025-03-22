@@ -1,5 +1,4 @@
 import axios from "axios";
-import { URLSearchParams } from "url";
 import { RequestOptions } from "../types/request";
 
 export async function apiRequest<T = any>(

@@ -1,5 +1,4 @@
 import { Client, CommandInteractionOptionResolver, Interaction, MessageFlags } from "discord.js";
-import { Event } from "./event";
 import { CommandManager } from "../command/commandManager";
 import { ButtonManager } from "../button/buttonManager";
 import { MenuManager } from "../menu/menuManager";
