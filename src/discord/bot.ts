@@ -36,7 +36,6 @@ export class Bot {
     this.registerEvents().then(() => {
       this.client.login(token).then(async () => {
         await this.registerModules();
-
         ButtonManager.LogAllButtons();
       });
     });

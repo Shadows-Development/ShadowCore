@@ -18,7 +18,6 @@ export class EventManager {
 
         this.client.on("interactionCreate", async (interaction: Interaction) => {
             const middleware = await Middleware.loadAllMiddleware();
-            console.log('Loaded middleware:', middleware.commandMiddleware);
             if (interaction.isChatInputCommand()) {
 
                 const command = CommandManager.getAllCommands().get(interaction.commandName);
@@ -32,15 +31,12 @@ export class EventManager {
                 const commandMiddleware = middleware.commandMiddleware;
                 try {
                     const globalMiddleware = commandMiddleware.get('global');
-                    console.log(globalMiddleware)
                     if(globalMiddleware) {
                         const proceed = await globalMiddleware.beforeExecution(interaction, command);
-                        console.log("Here")
                         if(!proceed) return;
                     }
 
                     const specificMiddleware = commandMiddleware.get(commandName);
-                    console.log(specificMiddleware)
                     if (specificMiddleware) {
                         const proceed = await specificMiddleware.beforeExecution(interaction, command);
                         if(!proceed) return;
