@@ -8,7 +8,7 @@
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "test": "echo \"No tests configured yet\" && exit 0",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
     "prepare": "npm run build",
     "postinstall": "echo '✅ ShadowCore installed successfully!'"
   },
