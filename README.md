@@ -11,7 +11,7 @@ ShadowCore is a **modular core framework** for Discord bot development. It provi
 ## 🌟 Features
 - 🚀 **Modular Command System** - Auto-loads commands from categorized folders.
 - 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`). 
-- 🛠 **Middleware Support** - Allows pre/post-execution logic for commands. **W.I.P.**
+- 🛠 **Middleware Support** - Allows pre/post-execution logic for commands.
 - ⏳ **Rate Limiting & Cooldowns** - Prevents spam and abuse.
 - 🌐 **API Utility with Axios** - Simplifies external API requests.
 - 📜 **Logging with Loki** - Built-in structured logging.
@@ -110,10 +110,3 @@ This project is licensed under the **GNU General Public License v3.0**. See the 
 
 ## 🌎 Community & Support
 - **GitHub Issues** - Report bugs & request features.
-
----
-
-### **Next Steps**
-- [ ] Set up **GitHub Actions** for automated testing.
-- [ ] Improve **middleware support** for commands.
-- [ ] Expand **unit tests** for better stability.
