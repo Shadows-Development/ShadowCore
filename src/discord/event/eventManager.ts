@@ -42,13 +42,14 @@ export class EventManager {
                     }
                     await command.middleware(interaction, this.client, interaction.options as CommandInteractionOptionResolver, command)
 
+                    if(globalMiddleware) {
+                        await globalMiddleware.afterExecution(interaction, command);
+                    }
+                    
                     if(specificMiddleware) {
                         await specificMiddleware.afterExecution(interaction, command);
                     }
 
-                    if(globalMiddleware) {
-                        await globalMiddleware.afterExecution(interaction, command);
-                    }
                 } catch (error) {
                     console.error(`❌ Error executing command "${interaction.commandName}":`, error);
                     await interaction.reply({ content: "An error occurred while executing this command.", flags: [MessageFlags.Ephemeral] });

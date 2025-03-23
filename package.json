@@ -7,6 +7,7 @@
   "bin": {
     "shadow-core": "dist/cli/cli.js"
   },
+  "documentation": "https://docs.shadowdevelopment.net/shadowcore",
   "scripts": {
     "build": "tsc",
     "postbuild": "node ./scripts/add-shebang.js",
