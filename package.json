@@ -4,12 +4,12 @@
   "description": "A modular core framework for Discord bot development, providing commands, buttons, menus, middleware, and more.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "bin": {
-    "shadow-core": "./dist/src/cli/cli.js"
+    "shadow-core": "dist/cli/cli.js"
   },
   "scripts": {
     "build": "tsc",
+    "postbuild": "node ./scripts/add-shebang.js",
     "prepublishOnly": "npm run build",
     "test": "echo \"No tests configured yet\" && exit 0",
     "type-check": "tsc --noEmit",
