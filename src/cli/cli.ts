@@ -4,9 +4,8 @@ import exampleCommand from "./commands/example.js";
 import initCommand from "./commands/init.js";
 
 const program = new Command();
-const version = readPackageJson().version;
 
-program.version(version).description("ShadowCore CLI");
+program.version("0.4.1").description("ShadowCore CLI");
 
 // Define your commands here
 // Example command
