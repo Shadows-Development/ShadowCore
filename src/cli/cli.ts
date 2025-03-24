@@ -1,5 +1,4 @@
 import { Command } from "commander";
-import { readPackageJson } from "../utils/general.js";
 import exampleCommand from "./commands/example.js";
 import initCommand from "./commands/init.js";
 
