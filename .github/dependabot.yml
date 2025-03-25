@@ -15,7 +15,7 @@ updates:
       - "dependencies"
       - "npm"
     reviewers:
-      - "ShadowsDevelopment"  # Add yourself or contributors as reviewers
+      - "Shadows-Development"  # Add yourself or contributors as reviewers
     commit-message:
       prefix: "⬆️ Bump"
       include: "scope"  # Includes dependency name in commit message
