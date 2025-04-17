@@ -28,3 +28,7 @@ export async function importFile(filePath: string) {
   }
 }
 
+export function isBotOwner(userId: string, ownerId: string | string[]): boolean {
+  const owners = Array.isArray(ownerId) ? ownerId : [ownerId]
+  return owners.includes(userId);
+}

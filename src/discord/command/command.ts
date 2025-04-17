@@ -7,7 +7,7 @@ import {
   MessageFlags,
   ChatInputApplicationCommandData
 } from "discord.js";
-import { checkCooldown } from "../util";
+import { checkCooldown, isBotOwner } from "../util";
 
 export type CommandOptions = {
   name: string;
@@ -63,7 +63,7 @@ export class Command {
     const userCooldown = checkCooldown(interaction.user.id, command.name, 3000);
 
     if (command.ownerOnly) {
-      if (interaction.user.id != guild?.ownerId) {
+      if(!isBotOwner(interaction.user.id, guild?.ownerId ?? "")) {
         return interaction.reply({
           content: "You do not have permission to run this command.",
           flags: [MessageFlags.Ephemeral],
