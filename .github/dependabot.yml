@@ -9,7 +9,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"  # Root directory (where package.json is)
     schedule:
-      interval: "daily"  # Check for updates once a week
+      interval: "daily"
     open-pull-requests-limit: 5
     versioning-strategy: increase
     labels:
@@ -25,7 +25,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"  # Root directory (where workflows are)
     schedule:
-      interval: "weekly"
+      interval: "daily"
     labels:
       - "security"
       - "github-actions"
