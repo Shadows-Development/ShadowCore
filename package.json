@@ -1,6 +1,6 @@
 {
   "name": "@shadow-dev/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modular core framework for Discord bot development, providing commands, buttons, menus, middleware, and more.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -62,5 +62,22 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.0.0",
     "typescript-eslint": "^8.27.0"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./utils": "./dist/utils/index.js",
+    "./utils/logger": "./dist/utils/logger.js",
+    "./utils/request": "./dist/utils/request.js",
+    "./utils/general": "./dist/utils/general.js",
+    "./utils/apiCache": "./dist/utils/apiCache.js",
+    "./utils/taskScheduler": "./dist/utils/taskScheduler.js",
+    "./discord": "./dist/discord/index.js",
+    "./discord/command": "./dist/discord/command/index.js",
+    "./discord/event": "./dist/discord/event/index.js",
+    "./discord/button": "./dist/discord/button/index.js",
+    "./discord/menu": "./dist/discord/menu/index.js",
+    "./discord/middleware": "./dist/discord/middleware/index.js",
+    "./cli": "./dist/cli/cli.js",
+    "./cli/utils": "./dist/cli/utils/generation.js"
   }
 }
