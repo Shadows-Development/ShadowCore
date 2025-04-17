@@ -11,6 +11,7 @@ updates:
     schedule:
       interval: "daily"  # Check for updates once a week
     open-pull-requests-limit: 5
+    versioning-strategy: increase
     labels:
       - "dependencies"
       - "npm"
