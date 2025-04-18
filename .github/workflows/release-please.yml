@@ -2,8 +2,8 @@ name: Release Please
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   release:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Create GitHub Release & Changelog
+      - name: Run Release Please
         uses: googleapis/release-please-action@v4
         with:
           release-type: node
