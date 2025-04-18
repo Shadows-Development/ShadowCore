@@ -15,14 +15,16 @@ import { Event } from "./event";
 import { Button } from "./button";
 import { Menu } from "./menu";
 import { importFile } from "./util";
+import { PluginLoader } from "./plugin";
 
 export class Bot {
-  private client: Client;
-  private debug: boolean;
+  public client: Client;
+  public debug: boolean;
   private commandManager: CommandManager;
   private eventManager: EventManager;
   private buttonManager: ButtonManager;
   private menuManager: MenuManager;
+  private pluginLoader: PluginLoader;
 
   constructor(token: string, intents: GatewayIntentBits[], debug = false) {
     this.client = new Client({
@@ -33,6 +35,7 @@ export class Bot {
     this.eventManager = new EventManager(this.client);
     this.buttonManager = new ButtonManager(this.client);
     this.menuManager = new MenuManager(this.client);
+    this.pluginLoader = new PluginLoader(this);
     this.registerEvents().then(() => {
       this.client.login(token).then(async () => {
         await this.registerModules();
@@ -47,6 +50,7 @@ export class Bot {
     await this.registerCommands();
     await this.registerButtons();
     await this.registerMenus();
+    await this.pluginLoader.registerPlugins();
 
     if (this.debug) console.log("✅ All modules registered.");
   }
