@@ -81,6 +81,7 @@
     "./discord/menu": "./dist/discord/menu/index.js",
     "./discord/middleware": "./dist/discord/middleware/index.js",
     "./cli": "./dist/cli/cli.js",
-    "./cli/utils": "./dist/cli/utils/generation.js"
+    "./cli/utils": "./dist/cli/utils/generation.js",
+    "./security": "./dist/security/index.js"
   }
 }
