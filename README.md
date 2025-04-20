@@ -1,51 +1,124 @@
-# ShadowCore  
+# ShadowCore v2.0.0 (Development Branch)
 
-ShadowCore is a **modular core framework** for Discord bot development. It provides a streamlined system for **commands, events, buttons, menus, middleware execution, API requests, and more**, making bot development faster and more efficient.
+> ⚠️ **This is the actively developed v2.0.0 branch of ShadowCore.**  
+> It is **unstable**, **experimental**, and **subject to rapid changes** until an official release is tagged.  
+>  
+> If you're looking for the stable version, see the [`main`](https://github.com/Shadows-Development/ShadowCore/tree/main) branch.
 
-![GitHub issues](https://img.shields.io/github/issues/Shadows-Development/ShadowCore?style=flat-square)  
-![GitHub forks](https://img.shields.io/github/forks/Shadows-Development/ShadowCore?style=flat-square)  
-![GitHub stars](https://img.shields.io/github/stars/Shadows-Development/ShadowCore?style=flat-square)  
-![GitHub license](https://img.shields.io/github/license/Shadows-Development/ShadowCore?style=flat-square)  
-![npm version](https://img.shields.io/npm/v/shadow-core?style=flat-square)  
+---
 
-## 📖 Documentation
-The full documentation for ShadowCore can be found at:  
-➡️ [ShadowCore Documentation](https://docs.shadowdevelopment.net/shadowcore)
+## 🧭 What Is ShadowCore v2.0.0?
 
-## 🌟 Features
-- 🚀 **Modular Command System** - Auto-loads commands from categorized folders.
-- 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`). 
-- 🛠 **Middleware Support** - Allows pre/post-execution logic for commands.
-- ⏳ **Rate Limiting & Cooldowns** - Prevents spam and abuse.
-- 🌐 **API Utility with Axios** - Simplifies external API requests.
-- 📜 **Logging with Loki** - Built-in structured logging.
-- ⏰ **Task Scheduler** - Run background tasks automatically.
+ShadowCore v2.0.0 is a **modular, security-first TypeScript framework** built for:
 
-## 🚀 Getting Started
-Check out the [Getting Started Guide](https://docs.shadowdevelopment.net/shadowcore/getting-started) for a step-by-step setup process.
+- 🔗 **Discord bots** (retaining all v1 functionality and structure)
+- 🧠 **NestJS APIs** (modular `@Modules`, injectable services, guards, etc.)
+- ⚙️ **CLI tools** (command scaffolding + plugin-ready runtime)
+- 🔐 **Reusable security primitives** (`argon2`, `jwt`, `hmac`, etc.)
+
+Unlike v1.x, this version is designed for **multi-platform extensibility**, **runtime plugin support**, and **clean separation of platform logic** — while retaining developer control and performance.
+
+---
+
+## ✅ v2.0.0 Progress Checklist
+
+> Progress tracked across internal PRs, commits, and linked issues.
+
+### 🔧 Core Framework & Utilities
+- [x] Base monorepo-ready structure
+- [x] Internal module exports (`security`, `utils`, `types`)
+- [x] Security utilities (argon2, jwt, hmac)
+- [ ] Task scheduler + queue interface redesign
+
+### 🧩 Discord Framework
+- [x] Command/Event/Button/Menu support migrated from v1
+- [x] Internal middleware system
+- [x] Cooldowns, permission checks
+- [ ] Plugin support (dynamic injection)
+- [ ] Role-based guards overhaul
+
+### 🧠 NestJS Integration (API Layer)
+- [x] JWT module wrapper with `JwtModule.registerAsync`
+- [x] `AuthService`, `HashService`, `TokenService`
+- [ ] Global guards (`RolesGuard`, `RateLimitGuard`)
+- [ ] Nest-style decorators (`@Public()`, `@ApiKey()`)
+- [ ] Zod-based input validation pipes
+- [ ] API key generation + verification service
+- [ ] OAuth support layer (optional)
+
+### ⚙️ CLI Toolkit
+- [x] Command-line entry point
+- [ ] Subcommand loader (auto-discovery)
+- [ ] Plugin-aware command scaffolding
+
+### 📚 Documentation & Tooling
+- [x] README updates (core + v2.0.0)
+- [ ] Migration guide: v1 → v2
+- [ ] Docs branding and restructuring
+- [ ] Plugin authoring guide
+- [ ] NestJS integration examples
+
+---
+
+## 📁 Project Structure (WIP)
+
+```txt
+core/
+├── discord/       # Discord command/event/button system
+├── nest/          # Injectable modules and guards for NestJS
+├── cli/           # CLI scaffolding
+├── security/      # Auth, hashing, tokens, HMAC
+├── utils/         # Generic shared utilities
+├── types/         # Global interfaces and enums
+└── index.ts       # Package entry
+```
+
+---
+
+## 🚧 Status
+
+ShadowCore v2.0.0 is still under **active development** and not ready for production use.  
+Tracking branches may include:
+
+- `v2.0.0`
+- `v2.0.0-discord`
+- `v2.0.0-security`
+- `v2.0.0-nest`
+- `v2.0.0-cli`
+
+---
+
+## 📌 Release Timeline
+
+- ⏳ No ETA yet
+- 🧪 First beta expected once the plugin system and NestJS layer stabilize
+- 📘 Docs will ship alongside the first tagged pre-release
+
+---
+
+## 🧪 How to Test It
+
+```bash
+git clone https://github.com/Shadows-Development/ShadowCore.git
+cd ShadowCore
+git checkout v2.0.0
+
+npm install
+npm run dev
+```
+
+Use `npm link` or `pnpm link` to consume it in a NestJS or bot project during development.
+
+---
+
+## 🧩 Contributing to v2.0.0
+
+You're welcome to help shape v2.0.0!  
+Please open an issue or discussion before submitting PRs — the structure is still evolving.
+
+---
 
 ## 📜 License
-This project is licensed under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
-1. **Fork the repository** on GitHub.
-2. **Clone your fork** to your local machine:
-   ```bash
-   git clone https://github.com/Shadows-Development/ShadowCore.git
-   ```
-3. **Create a new branch** for your changes:
-   ```bash
-   git checkout -b feat/new-functionality
-   ```
-4. **Make changes** and commit them:
-   ```bash
-   git commit -m "Added new feature"
-   ```
-5. **Push the branch** and create a pull request:
-   ```bash
-   git push origin feat/new-functionality
-   ```
-6. **Submit a pull request** on GitHub and wait for review.
-
-## 🌎 Community & Support
-- **GitHub Issues** - Report bugs & request features.
+ShadowCore is licensed under the **GNU General Public License v3.0**.  
+See the [LICENSE](../LICENSE) file for full terms.
