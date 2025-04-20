@@ -43,6 +43,8 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "@nestjs/common": "^11.0.20",
+    "@nestjs/core": "^11.0.20",
     "argon2": "^0.41.1",
     "axios": "^1.8.1",
     "commander": "^13.1.0",
@@ -82,6 +84,15 @@
     "./discord/middleware": "./dist/discord/middleware/index.js",
     "./cli": "./dist/cli/cli.js",
     "./cli/utils": "./dist/cli/utils/generation.js",
-    "./security": "./dist/security/index.js"
+    "./security": "./dist/security/index.js",
+    "./nest": "./dist/nest/index.js",
+    "./nest/decorators": "./dist/nest/decorators/index.js",
+    "./nest/decorators/current-user": "./dist/nest/decorators/current-user.js",
+    "./nest/decorators/roles": "./dist/nest/decorators/roles.js",
+    "./nest/guards": "./dist/nest/guards/index.js",
+    "./nest/guards/jwt-auth.guard": "./dist/nest/guards/jwt-auth.guard.js",
+    "./nest/guards/roles.guard": "./dist/nest/guards/roles.guard.js",
+    "./nest/services": "./dist/nest/services/index.js",
+    "./nest/services/token.service": "./dist/nest/services/token.service.js"
   }
 }
