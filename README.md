@@ -8,6 +8,8 @@
 >
 > 🔧 Development of v2.0.0 is ongoing in the [`v2.0.0`](https://github.com/Shadows-Development/ShadowCore/tree/v2.0.0) branch (and related `v2.0.0-*` feature branches).  
 >
+> 🧩 **Note:** The plugin system has been delayed until `v2.1.0` to ensure code quality and stability during the v2.0.0 refactor. It may still be explored in an experimental branch (`v2.1.0-plugins`), but it will not ship as part of `v2.0.0`.  
+>
 > 🕒 **There is currently no ETA for the v2.0.0 release.** The current stable release (`v1.x.x`) will continue to receive updates and is safe to use in production.
 
 ![GitHub issues](https://img.shields.io/github/issues/Shadows-Development/ShadowCore?style=flat-square)  
@@ -48,10 +50,10 @@ ShadowCore v2.0.0 is being designed to become a full-fledged, modular TypeScript
 ### ✅ Core Enhancements
 - Stronger internal APIs and improved typings
 - Clear separation of platform-specific and platform-agnostic features
-- First-class plugin injection support for commands, events, middleware
+- First-class plugin injection support (deferred to v2.1.0)
 
 ### 🧩 Expanded Use Cases
-- ✅ **Discord Bots** — Enhanced structure, guard logic, and plugin integration
+- ✅ **Discord Bots** — Enhanced structure, guard logic, and plugin hooks
 - ✅ **Express.js APIs** — Middleware, validation, JWT auth, and input sanitization
 - ✅ **CLI Tools** — Built-in CLI scaffolding and command registration system
 - ✅ **Security Libraries** — Reusable primitives for tokens, passwords, and signatures
@@ -62,15 +64,15 @@ ShadowCore v2.0.0 is being designed to become a full-fledged, modular TypeScript
 - HMAC-based message signing with timing-safe comparisons
 - Secure API key + token generation
 
-### 🧱 Plugin Architecture (Planned)
-- Auto-discovery and runtime plugin loading
-- Scoped command/event/button injection
-- Metadata validation and compatibility warnings
+### 🧱 Plugin Architecture (🚫 Deferred to v2.1.0)
+- Plugin discovery and runtime loading will be implemented **after** the v2.0.0 release
+- Will support scoped command/event/button injection
+- A dedicated branch such as `v2.1.0-plugins` will track its progress
 
 ### 📚 New Documentation Site (WIP)
 - Versioned docs for v1 and v2
 - Use-case-specific guides (Discord, Express, CLI, etc.)
-- Full plugin authoring documentation
+- Full plugin authoring documentation (in v2.1.0)
 - Improved search, examples, and theming
 
 > 💡 All development for v2.0.0 is taking place in the [`v2.0.0`](https://github.com/Shadows-Development/ShadowCore/tree/v2.0.0) branch and its sub-branches.  
