@@ -43,7 +43,7 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "argon2": "^0.41.1",
+    "argon2": "^0.43.0",
     "axios": "^1.8.1",
     "commander": "^13.1.0",
     "discord.js": "^14.8.0",
