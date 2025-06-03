@@ -7,6 +7,16 @@
 
 ---
 
+## 🏢 Project Ownership Update
+
+Effective **May 28th, 2025**, **ShadowCore is officially developed and maintained under [Shadow Development LLC](https://shadowdevelopment.net)**.  
+This update reflects our transition from the informal "Shadow Development" name to a formally recognized legal entity.
+
+> 🔐 This README was updated after the fact to reflect the official LLC formation date.  
+> The transition does **not** affect licensing, project goals, or community involvement — only formal ownership.
+
+---
+
 ## 🧭 What Is ShadowCore v2.0.0?
 
 ShadowCore v2.0.0 is a **modular, security-first TypeScript framework** built for:
