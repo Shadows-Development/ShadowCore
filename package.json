@@ -47,7 +47,7 @@
     "axios": "^1.9.0",
     "commander": "^14.0.0",
     "discord.js": "^14.19.3",
-    "glob": "^11.0.2",
+    "glob": "^11.0.3",
     "inquirer": "^12.6.3",
     "jsonwebtoken": "^9.0.2"
   },
