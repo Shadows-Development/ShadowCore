@@ -1,4 +1,4 @@
-import { Task } from "../types/task";
+import { Task } from "../types/task.type";
 
 export class TaskScheduler {
   private tasks = new Map<string, Task>();
