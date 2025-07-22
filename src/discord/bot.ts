@@ -14,7 +14,7 @@ import { Command } from "./command";
 import { Event } from "./event";
 import { Button } from "./button";
 import { Menu } from "./menu";
-import { importFile } from "./util";
+import { importFile, registerModule } from "./util";
 import { PluginLoader } from "./plugin";
 
 export class Bot {
@@ -36,6 +36,7 @@ export class Bot {
     this.buttonManager = new ButtonManager(this.client);
     this.menuManager = new MenuManager(this.client);
     this.pluginLoader = new PluginLoader(this);
+    registerModule("", undefined, undefined)
     this.registerEvents().then(() => {
       this.client.login(token).then(async () => {
         await this.registerModules();
