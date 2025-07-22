@@ -1,7 +1,7 @@
 import {
   Client,
   ClientEvents,
-  GatewayIntentBits,
+  GatewayIntentsString,
 } from "discord.js";
 import { CommandManager } from "./command/commandManager";
 import { EventManager } from "./event/eventManager";
@@ -20,13 +20,13 @@ import { PluginLoader } from "./plugin";
 export class Bot {
   public client: Client;
   public debug: boolean;
-  private commandManager: CommandManager;
+  private readonly commandManager: CommandManager;
   private eventManager: EventManager;
   private buttonManager: ButtonManager;
   private menuManager: MenuManager;
   private pluginLoader: PluginLoader;
 
-  constructor(token: string, intents: GatewayIntentBits[], debug = false) {
+  constructor(token: string, intents: GatewayIntentsString[], debug = false) {
     this.client = new Client({
       intents,
     });
@@ -198,19 +198,19 @@ export class Bot {
     if (this.debug) console.log("✅ Select menus registered.");
   }
 
-  getCommandManager() {
-    return this.commandManager;
-  }
-  getEventManager() {
-    return this.eventManager;
-  }
-  getButtonManager() {
-    return this.buttonManager;
-  }
-  getMenuManager() {
-    return this.menuManager;
-  }
-  getClient() {
-    return this.client;
-  }
+    getCommandManager() {
+        return this.commandManager;
+    }
+    getEventManager() {
+        return this.eventManager;
+    }
+    getButtonManager() {
+        return this.buttonManager;
+    }
+    getMenuManager() {
+        return this.menuManager;
+    }
+    getClient() {
+        return this.client;
+    }
 }
