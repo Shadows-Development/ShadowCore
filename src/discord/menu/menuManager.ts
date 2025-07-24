@@ -28,4 +28,7 @@ export class MenuManager {
       await menu.run(interaction, this.client);
     }
   }
+    static getAllMenus(): Map<string, Menu> {
+        return MenuManager.menus; // Provide a method to access all commands if needed
+    }
 }

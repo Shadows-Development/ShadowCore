@@ -4,16 +4,24 @@ import {glob} from "glob";
 import { importFile } from "./";
 import {Client} from "discord.js";
 
+type BaseModule = Partial<{
+    name: string;
+    description: string;
+    event: string;
+    once: boolean;
+    customId: string;
+    run: (...args: any[]) => void;
+}>
 
-export async function registerModule<T>(directory: string, manager: any, client: undefined): Promise<void> {
-    if (this.debug) console.log(`🔍 Scanning for ${directory}...`);
+export async function registerModule<T extends BaseModule>(directory: string, manager: any, client: Client, debug: boolean): Promise<void> {
+    if (debug) console.log(`🔍 Scanning for ${directory}...`);
 
     const baseDir = process.cwd();
 
     const isDev = fs.existsSync(path.join(baseDir, `src/${directory}`));
     const dir = isDev ? `src/${directory}` : `dist/${directory}`;
 
-    if (this.debug) console.log(`🟢 Using ${directory} directory:`, dir);
+    if (debug) console.log(`🟢 Using ${directory} directory:`, dir);
 
     const ext = isDev ? "ts" : "js";
     const files = await glob(`**/*.${ext}`, {
@@ -21,7 +29,7 @@ export async function registerModule<T>(directory: string, manager: any, client:
         absolute: true,
     });
 
-    if (this.debug) console.log(`🔍 Found ${directory} files:`, files);
+    if (debug) console.log(`🔍 Found ${directory} files:`, files);
 
     if (files.length === 0) {
         console.warn(`⚠️ No ${directory} files found. Check your folder structure.`);
@@ -30,21 +38,28 @@ export async function registerModule<T>(directory: string, manager: any, client:
     for (const filePath of files) {
         try {
             const module: T = await importFile(filePath);
-            if(!module.name || !module.event || !module.customId) return;
-
+            if (!module.name && !module.event && !module.customId) {
+                if (debug) console.warn(`⚠️ Skipping unknown module: ${filePath}`);
+                continue;
+            }
             if(module.name) {
-               manager.registerCommand(module);
-               if (this.debug) console.log(`✅ Registered command: ${module.name}`);
+               await manager.registerCommand(module);
+               if (debug) console.log(`✅ Registered command: ${module.name}`);
             } else if (module.event) {
-                if (!module || !module.event || typeof module.run !== "function") {
-                    return console.warn(`⚠️ Skipping invalid event file: ${filePath}`);
+                if (!module.event || typeof module.run !== "function") {
+                    console.warn(`⚠️ Skipping invalid event module: ${filePath}`);
+                    continue;
                 }
+
+                const runHandler = module.run;
+                const eventName = module.event;
+
                 if (module.once) {
-                    client.once(module.event, (...args) => {
-                        module.run(...args);
+                    client.once(eventName, (...args) => {
+                        runHandler(...args);
                     });
                 } else {
-                    client.on(module.event, (...args) => module.run(...args));
+                    client.on(eventName, (...args) => runHandler(...args));
                 }
             } else if (module.customId) {
                 if (directory == "buttons") {
@@ -55,7 +70,8 @@ export async function registerModule<T>(directory: string, manager: any, client:
             }
 
         } catch (error) {
-
+            console.error(`❌ Error loading ${filePath}:`, error instanceof Error ? error.message : error);
+            if (debug) console.error(error);
         }
     }
 }
