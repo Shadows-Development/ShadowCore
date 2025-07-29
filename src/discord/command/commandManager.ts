@@ -25,9 +25,6 @@ export class CommandManager {
             return;
         }
 
-        const commandNames = commandsArray.map(cmd => (cmd as { name: string }).name);
-        // console.log("🔍 Registering commands:", commandNames);
-
         if (guildId) {
             const guild = this.client.guilds.cache.get(guildId);
             if (guild) {

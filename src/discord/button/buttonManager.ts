@@ -1,7 +1,6 @@
 import { Client, ButtonInteraction } from "discord.js";
 import { Button } from "./button";
 import { splitSpecialId } from "../util";
-import {Command} from "../command";
 
 export class ButtonManager {
   private client: Client;
