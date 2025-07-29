@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.1](https://github.com/Shadows-Development/ShadowCore/compare/v1.2.0...v1.2.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* changed GatewayIntentBits to GatewayIntentsString ([109702a](https://github.com/Shadows-Development/ShadowCore/commit/109702aee54375d16b394ea929e34d7255a97096))
+* Lint issues ([28d1a0f](https://github.com/Shadows-Development/ShadowCore/commit/28d1a0f4254aa78b5df79dd6cc0d53b9274179c7))
+* npm Audit Security fix ([9da46b3](https://github.com/Shadows-Development/ShadowCore/commit/9da46b344e57f65b2c08ccecd8f453f527fb80f1))
+
 ## [1.2.0](https://github.com/Shadows-Development/ShadowCore/compare/v1.1.0...v1.2.0) (2025-04-20)
 
 
