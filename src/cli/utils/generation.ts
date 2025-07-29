@@ -27,7 +27,7 @@ export async function generateProject(
   execSync(`${packageManager} init -y`, { cwd: projectPath, stdio: "inherit" });
 
   // Install required dependencies for the base project
-  const baseDependencies = ["shadow-core", "discord.js"];
+  const baseDependencies = ["@shadow-dev/core", "discord.js"];
   execSync(`${packageManager} add ${baseDependencies.join(" ")}`, {
     cwd: projectPath,
     stdio: "inherit",
@@ -35,7 +35,7 @@ export async function generateProject(
 
   // Setup basic project structure
 
-  const indexts = `import { Bot } from 'shadow-core';
+  const indexts = `import { Bot } from '@shadow-dev/core';
 import { GatewayIntentBits } from 'discord.js';
 
 // Replace with your bot's token
@@ -46,9 +46,9 @@ const GUILD_ID = 'YOUR_GUILD_ID'; // Replace with your server's ID
 export const bot = new Bot(
   token,
   [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent,
+    'Guilds',
+    'GuildMessages',
+    'MessageContent'
   ],
   false // Debug mode disabled
 );
@@ -220,7 +220,7 @@ export default defineConfig([
   if (examples.length > 0) {
     for (const example of examples) {
       if (example === "command") {
-        const commandExample = `import { Command } from 'shadow-core';
+        const commandExample = `import { Command } from '@shadow-dev/core';
 
 export default new Command({
   name: 'ping',
@@ -241,7 +241,7 @@ export default new Command({
         );
       }
       if (example === "event") {
-        const eventExample = `import { Event } from 'shadow-core';
+        const eventExample = `import { Event } from '@shadow-dev/core';
 import { bot } from '../index';
 
 export default new Event(
@@ -261,7 +261,7 @@ export default new Event(
         );
       }
       if (example === "button") {
-        const buttonExample = `import { Button, splitSpecialId } from 'shadow-core';
+        const buttonExample = `import { Button, splitSpecialId } from '@shadow-dev/core';
 
 export default new Button({
   customId: 'test-button',
@@ -280,7 +280,7 @@ export default new Button({
         );
       }
       if (example === "menu") {
-        const menuExample = `import { Menu } from 'shadow-core';
+        const menuExample = `import { Menu } from '@shadow-dev/core';
 
 export default new Menu({
   customId: 'testing-menu',
@@ -297,7 +297,7 @@ export default new Menu({
         );
       }
       if (example === "middleware") {
-        const middlewareglobalExample = `import { CommandMiddleware } from 'shadow-core';
+        const middlewareglobalExample = `import { CommandMiddleware } from '@shadow-dev/core';
 
 export default new CommandMiddleware({
   name: 'global',
@@ -310,7 +310,7 @@ export default new CommandMiddleware({
   },
 });
 `
-        const middlewarespecificExample = `import { CommandMiddleware } from 'shadow-core';
+        const middlewarespecificExample = `import { CommandMiddleware } from '@shadow-dev/core';
 
 export default new CommandMiddleware({
   name: 'ping',

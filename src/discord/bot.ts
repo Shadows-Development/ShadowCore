@@ -1,7 +1,7 @@
 import {
   Client,
   ClientEvents,
-  GatewayIntentBits,
+  GatewayIntentsString,
 } from "discord.js";
 import { CommandManager } from "./command/commandManager";
 import { EventManager } from "./event/eventManager";
@@ -14,19 +14,19 @@ import { Command } from "./command";
 import { Event } from "./event";
 import { Button } from "./button";
 import { Menu } from "./menu";
-import { importFile } from "./util";
+import { importFile, registerModule } from "./util";
 import { PluginLoader } from "./plugin";
 
 export class Bot {
   public client: Client;
   public debug: boolean;
-  private commandManager: CommandManager;
+  private readonly commandManager: CommandManager;
   private eventManager: EventManager;
   private buttonManager: ButtonManager;
   private menuManager: MenuManager;
   private pluginLoader: PluginLoader;
 
-  constructor(token: string, intents: GatewayIntentBits[], debug = false) {
+  constructor(token: string, intents: GatewayIntentsString[], debug = false) {
     this.client = new Client({
       intents,
     });
@@ -36,20 +36,31 @@ export class Bot {
     this.buttonManager = new ButtonManager(this.client);
     this.menuManager = new MenuManager(this.client);
     this.pluginLoader = new PluginLoader(this);
-    this.registerEvents().then(() => {
-      this.client.login(token).then(async () => {
-        await this.registerModules();
-        ButtonManager.LogAllButtons();
-      });
+    registerModule<Event<keyof ClientEvents>>("events", this.eventManager, this.client, this.debug).then(() => {
+        this.client.login(token).then(async () => {
+            await this.registerModules();
+        });
     });
+    // this.registerEvents().then(() => {
+    //   this.client.login(token).then(async () => {
+    //     await this.registerModules();
+    //     ButtonManager.LogAllButtons();
+    //   });
+    // });
   }
   
   private async registerModules() {
     if (this.debug) console.log("🔍 Registering modules...");
 
-    await this.registerCommands();
-    await this.registerButtons();
-    await this.registerMenus();
+    await registerModule<Command>("commands", this.commandManager, this.client, this.debug);
+    await registerModule<Button>("buttons", this.buttonManager, this.client, this.debug);
+    await registerModule<Menu>("menus", this.menuManager, this.client, this.debug);
+
+    console.log(`✅ Successfully loaded ${CommandManager.getAllCommands().size} commands, ${ButtonManager.getAllButtons().size} buttons, ${MenuManager.getAllMenus().size} menus.`)
+
+    // await this.registerCommands();
+    // await this.registerButtons();
+    // await this.registerMenus();
     await this.pluginLoader.registerPlugins();
 
     if (this.debug) console.log("✅ All modules registered.");
@@ -198,19 +209,19 @@ export class Bot {
     if (this.debug) console.log("✅ Select menus registered.");
   }
 
-  getCommandManager() {
-    return this.commandManager;
-  }
-  getEventManager() {
-    return this.eventManager;
-  }
-  getButtonManager() {
-    return this.buttonManager;
-  }
-  getMenuManager() {
-    return this.menuManager;
-  }
-  getClient() {
-    return this.client;
-  }
+    getCommandManager() {
+        return this.commandManager;
+    }
+    getEventManager() {
+        return this.eventManager;
+    }
+    getButtonManager() {
+        return this.buttonManager;
+    }
+    getMenuManager() {
+        return this.menuManager;
+    }
+    getClient() {
+        return this.client;
+    }
 }
