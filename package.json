@@ -1,6 +1,6 @@
 {
   "name": "@shadow-dev/core",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A modular core framework for Discord bot development, providing commands, buttons, menus, middleware, and more.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
