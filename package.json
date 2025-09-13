@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "argon2": "^0.43.0",
-    "axios": "^1.9.0",
+    "axios": "^1.12.1",
     "commander": "^14.0.0",
     "discord.js": "^14.19.3",
     "glob": "^11.0.3",
