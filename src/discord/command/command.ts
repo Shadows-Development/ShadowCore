@@ -27,6 +27,7 @@ export class Command {
   description: string;
   roles?: RoleResolvable[];
   permissions?: PermissionsBitField[];
+  options?: ChatInputApplicationCommandData["options"];
   ownerOnly?: boolean;
   run: (
     interaction: ChatInputCommandInteraction,
@@ -39,6 +40,7 @@ export class Command {
     this.name = options.name;
     this.description = options.description;
     this.run = options.run;
+    this.options = options.options;
     if (options.roles) {
       this.roles = options.roles;
     }

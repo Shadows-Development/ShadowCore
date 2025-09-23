@@ -28,9 +28,7 @@ export class ButtonManager {
     }
   }
 
-  static LogAllButtons(): void {
-    for (const [id, button] of ButtonManager.buttons) {
-      console.log(`Button ID: ${id}, Button Data:`, button);
-    }
+  static getAllButtons(): Map<string, Button> {
+      return ButtonManager.buttons;
   }
 }

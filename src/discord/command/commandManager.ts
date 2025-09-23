@@ -9,7 +9,7 @@ export class CommandManager {
         this.client = client;
     }
 
-    registerCommand(command: Command) {
+    async registerCommand(command: Command) {
         CommandManager.commands.set(command.name, command);
     }
 
@@ -24,9 +24,6 @@ export class CommandManager {
             console.log("⚠️ No commands have been registered.");
             return;
         }
-
-        const commandNames = commandsArray.map(cmd => (cmd as { name: string }).name);
-        console.log("🔍 Registering commands:", commandNames);
 
         if (guildId) {
             const guild = this.client.guilds.cache.get(guildId);
