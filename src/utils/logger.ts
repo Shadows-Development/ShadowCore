@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { LokiConfig, LogEntry } from "../types/logger";
+import type { LokiConfig, LogEntry } from "../types/logger.type";
 
 export class LokiLogger {
   private config: LokiConfig;
