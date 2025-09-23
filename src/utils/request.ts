@@ -1,5 +1,5 @@
 import axios from "axios";
-import { RequestOptions } from "../types/request";
+import { RequestOptions } from "../types/request.type";
 
 export async function apiRequest<T = any>(
   url: string,
