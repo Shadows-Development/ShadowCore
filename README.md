@@ -1,9 +1,10 @@
-# ShadowCore v2.0.0 (Development Branch)
+# ShadowCore
 
-> ⚠️ **This is the actively developed `v2.0.0` branch of ShadowCore.**  
-> It is **unstable**, **experimental**, and **subject to rapid changes** until an official release is tagged.  
->  
-> If you're looking for the stable version, see the [`main`](https://github.com/Shadows-Development/ShadowCore/tree/main) branch.
+![GitHub issues](https://img.shields.io/github/issues/Shadows-Development/ShadowCore?style=flat-square)  
+![GitHub forks](https://img.shields.io/github/forks/Shadows-Development/ShadowCore?style=flat-square)  
+![GitHub stars](https://img.shields.io/github/stars/Shadows-Development/ShadowCore?style=flat-square)  
+![GitHub license](https://img.shields.io/github/license/Shadows-Development/ShadowCore?style=flat-square)  
+![npm version](https://img.shields.io/npm/v/@shadow-dev/core?style=flat-square)
 
 ---
 
@@ -17,126 +18,66 @@ This update reflects our transition from the informal "Shadow Development" name 
 
 ---
 
-## 🧭 What Is ShadowCore v2.0.0?
 
-ShadowCore v2.0.0 is a **modular, security-first TypeScript framework** built for:
+## 📖 Documentation
 
-- 🔗 **Discord bots** (retaining all v1 functionality and structure)
-- 🧠 **NestJS APIs** (modular `@Modules`, injectable services, guards, etc.)
-- ⚙️ **CLI tools** (command scaffolding + plugin-ready runtime)
-- 🔐 **Reusable security primitives** (`argon2`, `jwt`, `hmac`, etc.)
+The full documentation for ShadowCore can be found at:  
+➡️ [ShadowCore Documentation](https://docs.shadowdevelopment.net/shadowcore)
 
-Unlike v1.x, this version is designed for **multi-platform extensibility**, **runtime plugin support**, and **clean separation of platform logic** — while retaining developer control and performance.
+> 🛠️ Docs are currently being rebuilt for v2.0.0.  
+> A new, versioned site with expanded content and branding is in progress.
 
 ---
 
-## ✅ v2.0.0 Progress Checklist
+## 🌟 Features
 
-> Progress tracked across internal PRs, commits, and linked issues.
-
-### 🔧 Core Framework & Utilities
-- [x] Base monorepo-ready structure
-- [x] Internal module exports (`security`, `utils`, `types`)
-- [x] Security utilities (argon2, jwt, hmac)
-- [x] TaskScheduler refactored to class-based
-- [ ] TaskScheduler documentation/tests
-
-### 🧩 Discord Framework
-- [x] Command/Event/Button/Menu system
-- [x] Middleware + cooldown support
-- [x] Role-based guard system (non-Nest)
-- [ ] Plugin system (🕓 Deferred — will not ship in v2.0.0, may be developed under `v2.1.0` branch)
-
-### 🧠 NestJS Integration (API Layer)
-- [x] TokenService with cookie-based JWT handling
-- [x] `JwtAuthGuard`, `RolesGuard`
-- [x] `@Roles`, `@CurrentUser` decorators
-- [ ] `@Public`, `@ApiKey` decorators
-- [ ] Global `RateLimitGuard`
-- [ ] Zod-based input validation pipes
-- [ ] API key service
-- [ ] OAuth support (optional)
-
-### ⚙️ CLI Toolkit
-- [x] CLI entrypoint & command handling
-- [ ] Plugin-aware CLI scaffolding (🕓 Deferred — tied to plugin system)
-
-### 📚 Documentation & Tooling
-- [x] v2.0.0 README and checklist
-- [ ] Plugin authoring guide
-- [ ] v1 → v2 migration guide
-- [ ] NestJS integration examples
-- [ ] Docs branding restructure (Mintlify or Docusaurus)
+- 🚀 **Modular Command System** - Auto-loads commands from categorized folders
+- 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`)
+- 🛠 **Middleware Support** - Allows pre/post-execution logic for commands
+- ⏳ **Rate Limiting & Cooldowns** - Prevents spam and abuse
+- 🌐 **API Utility with Axios** - Simplifies external API requests
+- 📜 **Logging with Loki** - Built-in structured logging
+- ⏰ **Task Scheduler** - Run background tasks automatically
+- 🔐 **Core Security Utilities** - Includes Argon2 password hashing, JWT, HMAC signing
 
 ---
 
-## 📁 Project Structure (WIP)
+## 🚀 Getting Started
 
-```txt
-core/
-├── discord/       # Discord command/event/button system
-├── nest/          # Injectable modules and guards for NestJS
-├── cli/           # CLI scaffolding
-├── security/      # Auth, hashing, tokens, HMAC
-├── utils/         # Generic shared utilities
-├── types/         # Global interfaces and enums
-└── index.ts       # Package entry
-```
-
----
-
-## 📌 Plugin System Status
-
-🧩 The **Discord plugin system** and **plugin-aware CLI scaffolding** will **not be included in the v2.0.0 release**.  
-While development **may begin during the v2.x cycle**, the feature has been deferred to a **future update (likely v2.1.0)** to ensure focus on the core framework’s quality, stability, and documentation.  
-If active work resumes, it will be tracked under a dedicated branch such as `v2.1.0-plugins`.
-
----
-
-## 🚧 Status
-
-ShadowCore v2.0.0 is under **active development** and not ready for production use.  
-Tracking branches may include:
-
-- `v2.0.0`
-- `v2.0.0-discord`
-- `v2.0.0-security`
-- `v2.0.0-nest`
-- `v2.0.0-utils`
-
----
-
-## 📌 Release Timeline
-
-- ⏳ No ETA currently
-- 🧪 First beta once NestJS layer and v2 features stabilize
-- 📘 Docs will ship alongside the first tagged release candidate
-
----
-
-## 🧪 How to Test It
-
-```bash
-git clone https://github.com/Shadows-Development/ShadowCore.git
-cd ShadowCore
-git checkout v2.0.0
-
-npm install
-npm run dev
-```
-
-Use `npm link` or `pnpm link` to test in other projects during development.
-
----
-
-## 🧩 Contributing to v2.0.0
-
-You're welcome to help shape v2.0.0!  
-Please open an issue or discussion before submitting PRs — the structure is still evolving.
+Check out the [Getting Started Guide](https://docs.shadowdevelopment.net/shadowcore/getting-started) for a step-by-step setup process.
 
 ---
 
 ## 📜 License
 
-ShadowCore is licensed under the **GNU General Public License v3.0**.  
-See the [LICENSE](../LICENSE) file for full terms.
+This project is licensed under the **GNU General Public License v3.0**.  
+See the [LICENSE](LICENSE) file for full terms.
+
+---
+
+## 🤝 Contributing
+
+1. **Fork the repository** on GitHub  
+2. **Clone your fork** to your local machine:
+   ```bash
+   git clone https://github.com/Shadows-Development/ShadowCore.git
+   ```
+3. **Create a new branch** for your changes:
+   ```bash
+   git checkout -b feat/new-functionality
+   ```
+4. **Make changes** and commit them:
+   ```bash
+   git commit -m "feat: add cool feature"
+   ```
+5. **Push the branch** and create a pull request:
+   ```bash
+   git push origin feat/new-functionality
+   ```
+6. **Submit a pull request** on GitHub and wait for review
+
+---
+
+## 🌎 Community & Support
+
+- 💬 Open a [GitHub Issue](https://github.com/Shadows-Development/ShadowCore/issues) for bugs or feature requests
