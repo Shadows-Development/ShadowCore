@@ -1,9 +1,12 @@
 import fs from "fs";
 import path from "path";
 import { glob } from "glob";
-import { importFile } from "../util";
+import {importFile, registerModule} from "../util";
 import { Bot } from "../bot";
 import { Plugin, metadata } from "./plugin";
+import {Command} from "../command";
+import {Button} from "../button";
+import {Menu} from "../menu";
 
 export class PluginLoader {
   private baseDir: string;
@@ -54,6 +57,9 @@ export class PluginLoader {
 
         if (pluginModule?.register) {
           pluginModule.metadata = meta;
+          await registerModule<Command>(`plugins/${filePath}/commands`, this.bot.getCommandManager(), this.bot.client, this.bot.debug);
+          await registerModule<Button>(`plugins/${filePath}/buttons`, this.bot.getButtonManager(), this.bot.client, this.bot.debug);
+          await registerModule<Menu>(`plugins/${filePath}/menus`, this.bot.getMenuManager(), this.bot.client, this.bot.debug);
           pluginModule.register(this.bot.client);
 
           if (this.debug) {
