@@ -5,7 +5,90 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6dc7121-0219-42d5-a210-d47aa2c32dc4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/dependabot.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/dependabot.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pr-checks.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pr-checks.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/release-please.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/release-please.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarcloud-analysis" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonarcloud-analysis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ShadowCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ShadowCore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/stream-checklist.md" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stream-checklist.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SECURITY.md" beforeDir="false" afterPath="$PROJECT_DIR$/SECURITY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/add-shebang.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/add-shebang.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/cli.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/cli.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/commands/example.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/commands/example.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/commands/init.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/commands/init.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/utils/generation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/utils/generation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/button/button.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/button/button.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/button/buttonManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/button/buttonManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/button/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/button/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/command/command.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/command/command.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/command/commandManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/command/commandManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/command/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/command/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/event/event.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/event/event.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/event/eventManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/event/eventManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/event/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/event/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/menu/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/menu/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/menu/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/menu/menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/menu/menuManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/menu/menuManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/middleware/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/middleware/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/middleware/interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/middleware/interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/middleware/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/middleware/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/plugin/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/plugin/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/plugin/plugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/plugin/plugin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/plugin/pluginLoader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/plugin/pluginLoader.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/plugin/pluginManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/plugin/pluginManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/util/general.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/util/general.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/util/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/util/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/util/rateLimiter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/util/rateLimiter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/discord/util/registration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/discord/util/registration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventbus/EventPriority.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventbus/EventPriority.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventbus/ShadowEvent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventbus/ShadowEvent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventbus/ShadowEventBus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventbus/ShadowEventBus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventbus/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventbus/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/decorators/api-key.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/decorators/api-key.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/decorators/current-user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/decorators/current-user.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/decorators/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/decorators/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/decorators/roles.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/decorators/roles.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/guards/api-key.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/guards/api-key.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/guards/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/guards/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/guards/jwt-auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/guards/jwt-auth.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/guards/roles.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/guards/roles.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/services/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/services/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/services/token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/services/token.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nest/tokens/api-key.token.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/nest/tokens/api-key.token.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/security/hash.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/security/hash.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/security/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/security/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/security/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/security/jwt.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/security/secrets.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/security/secrets.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/apikey.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/apikey.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/logger.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/logger.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/request.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/request.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/task.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/task.type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/apiCache.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apiCache.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/general.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/general.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/logger.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/taskScheduler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/taskScheduler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +126,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "feat/event-bus-system",
+    "git-widget-placeholder": "Rebasing feat/event-bus-system",
     "javascript.preferred.runtime.type.id": "node",
     "last_opened_file_path": "N:/ShadowDevelopment/Github/ShadowCore",
     "node.js.detected.package.eslint": "true",
@@ -70,7 +153,7 @@
       <option name="presentableId" value="Default" />
       <updated>1765684257613</updated>
       <workItem from="1765684258764" duration="1802000" />
-      <workItem from="1765734119264" duration="2025000" />
+      <workItem from="1765734119264" duration="2328000" />
     </task>
     <servers />
   </component>
