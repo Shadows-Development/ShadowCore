@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/Shadows-Development/ShadowCore/compare/v1.2.1...v1.3.0) (2025-12-19)
+
+
+### Features
+
+* Event Bus System ([#128](https://github.com/Shadows-Development/ShadowCore/issues/128)) ([6390211](https://github.com/Shadows-Development/ShadowCore/commit/639021118908edbc317941b5b0ab09ee6e65c6e8))
+* Plugin System Auto Registration of Components ([#132](https://github.com/Shadows-Development/ShadowCore/issues/132)) ([5d8918f](https://github.com/Shadows-Development/ShadowCore/commit/5d8918f4e933adebbb4ee57c91604a14fc8952a0))
+
 ## [1.2.1](https://github.com/Shadows-Development/ShadowCore/compare/v1.2.0...v1.2.1) (2025-07-29)
 
 
