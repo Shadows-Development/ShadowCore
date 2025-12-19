@@ -22,7 +22,8 @@ jobs:
         uses: googleapis/release-please-action@v4
         with:
           release-type: node
-          release-as: 2.0.0
+          release-as: 2.1.0
+
 
 
 
