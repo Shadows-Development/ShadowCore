@@ -1,50 +1,107 @@
 # ShadowCore
 
-![GitHub issues](https://img.shields.io/github/issues/Shadows-Development/ShadowCore?style=flat-square)  
-![GitHub forks](https://img.shields.io/github/forks/Shadows-Development/ShadowCore?style=flat-square)  
-![GitHub stars](https://img.shields.io/github/stars/Shadows-Development/ShadowCore?style=flat-square)  
-![GitHub license](https://img.shields.io/github/license/Shadows-Development/ShadowCore?style=flat-square)  
+![GitHub issues](https://img.shields.io/github/issues/Shadows-Development/ShadowCore?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/Shadows-Development/ShadowCore?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/Shadows-Development/ShadowCore?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/Shadows-Development/ShadowCore?style=flat-square)
 ![npm version](https://img.shields.io/npm/v/@shadow-dev/core?style=flat-square)
 
 ---
 
-## 🏢 Project Ownership Update
+## 🏢 Project Ownership
 
-Effective **May 28th, 2025**, **ShadowCore is officially developed and maintained under [Shadow Development LLC](https://shadowdevelopment.net)**.  
-This update reflects our transition from the informal "Shadow Development" name to a formally recognized legal entity.
+Effective **May 28th, 2025**, **ShadowCore is officially developed and maintained under [Shadow Development LLC](https://shadowdevelopment.net)**.
 
-> 🔐 This README was updated after the fact to reflect the official LLC formation date.  
-> The transition does **not** affect licensing, project goals, or community involvement — only formal ownership.
-
----
-
-
-## 📖 Documentation
-
-The full documentation for ShadowCore can be found at:  
-➡️ [ShadowCore Documentation](https://docs.shadowdevelopment.net/shadowcore)
-
-> 🛠️ Docs are currently being rebuilt for v2.0.0.  
-> A new, versioned site with expanded content and branding is in progress.
+This reflects the transition from the informal “Shadow Development” name to a legally registered entity.  
+The transition does **not** affect licensing, project goals, or community involvement — only formal ownership.
 
 ---
 
-## 🌟 Features
+## 📘 Overview
 
-- 🚀 **Modular Command System** - Auto-loads commands from categorized folders
-- 🎛 **Dynamic Button & Menu Handling** - Supports dynamic custom IDs (`feature:action:{id}`)
-- 🛠 **Middleware Support** - Allows pre/post-execution logic for commands
-- ⏳ **Rate Limiting & Cooldowns** - Prevents spam and abuse
-- 🌐 **API Utility with Axios** - Simplifies external API requests
-- 📜 **Logging with Loki** - Built-in structured logging
-- ⏰ **Task Scheduler** - Run background tasks automatically
-- 🔐 **Core Security Utilities** - Includes Argon2 password hashing, JWT, HMAC signing
+**ShadowCore** is a modular, extensible framework for building large-scale Discord bots with a strong focus on:
+
+- clean architecture
+- plugin-driven extensibility
+- predictable load order
+- execution safety
+- long-term maintainability
+
+ShadowCore is designed to scale beyond single-bot projects and supports multi-plugin ecosystems with minimal boilerplate.
+
+---
+
+## 🌟 Core Features
+
+- 🧩 **First-Class Plugin System**  
+  Dynamically load commands, buttons, menus, and events from plugins using the same module system as core components.
+
+- ⚙️ **Automatic Component Registration**  
+  Core and plugin components share a unified auto-registration pipeline — no manual wiring required.
+
+- 🧠 **Event Bus**  
+  Priority-based internal event system for decoupled communication between core systems and plugins.
+
+- 🚀 **Modular Command System**  
+  Commands are auto-discovered from categorized folders with built-in middleware support.
+
+- 🎛 **Dynamic Button & Menu Handling**  
+  Supports dynamic custom IDs (e.g. `feature:action:{id}`) for scalable interaction handling.
+
+- 🛡 **Execution Isolation**  
+  Plugin and command failures are safely contained so one component cannot crash the bot.
+
+- 🛠 **Middleware Pipeline**  
+  Pre- and post-execution middleware with deterministic ordering.
+
+- ⏳ **Rate Limiting & Cooldowns**  
+  Built-in mechanisms to prevent spam and abuse.
+
+- 🌐 **Utility Modules**  
+  Axios-based API helpers, logging utilities, task scheduling, and general helpers.
+
+- 🔐 **Security Utilities**  
+  Includes Argon2 password hashing, JWT helpers, and HMAC signing utilities.
 
 ---
 
 ## 🚀 Getting Started
 
-Check out the [Getting Started Guide](https://docs.shadowdevelopment.net/shadowcore/getting-started) for a step-by-step setup process.
+To get started with ShadowCore, follow the step-by-step setup guide in the documentation:
+
+➡️ **Documentation:**  
+https://docs.shadowdevelopment.net/shadowcore
+
+> 🛠️ Documentation is currently being refreshed for ShadowCore v2+.  
+> A new, multi-project, versioned documentation site is in progress.
+
+---
+
+## 🧩 Plugin System
+
+ShadowCore includes a built-in plugin system that allows functionality to be developed and distributed independently of the core.
+
+Plugins can provide:
+- commands
+- buttons
+- menus
+- events
+- background services
+
+Plugin components are automatically discovered and registered at startup, and execution is fully isolated from the core runtime.
+
+Plugin authoring and structure are documented in the official docs.
+
+---
+
+## 🖥️ CLI Tooling
+
+ShadowCore includes a CLI to assist with:
+- project scaffolding
+- consistent project structure
+- future developer tooling
+
+CLI functionality will continue to expand alongside the framework.
 
 ---
 
@@ -54,7 +111,6 @@ This project is licensed under the **GNU General Public License v3.0**.
 See the [LICENSE](LICENSE) file for full terms.
 
 ---
-
 ## 🤝 Contributing
 
 1. **Fork the repository** on GitHub  
@@ -81,3 +137,4 @@ See the [LICENSE](LICENSE) file for full terms.
 ## 🌎 Community & Support
 
 - 💬 Open a [GitHub Issue](https://github.com/Shadows-Development/ShadowCore/issues) for bugs or feature requests
+
