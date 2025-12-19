@@ -77,7 +77,11 @@ export class Command {
           flags: [MessageFlags.Ephemeral],
         });
       }
-      command.run(interaction, client, args);
+      try{
+        await command.run(interaction, client, args);
+      } catch(error) {
+        console.error(error);
+      }
     } else if (command.roles) {
       // eslint-disable-next-line
       let roles = Array<RoleResolvable>();
@@ -114,7 +118,11 @@ export class Command {
         });
       }
 
-      command.run(interaction, client, args);
+      try {
+        await command.run(interaction, client, args);
+      } catch (error) {
+        console.error(error);
+      }
     } else if (command.permissions) {
       if (!interaction.memberPermissions?.has(command.permissions)) {
         return interaction.reply({
@@ -128,7 +136,11 @@ export class Command {
           flags: [MessageFlags.Ephemeral],
         });
       }
-      command.run(interaction, client, args);
+      try{
+        await command.run(interaction, client, args);
+      } catch(error) {
+        console.error(error);
+      }
     } else {
       if (!userCooldown) {
         return interaction.reply({
@@ -136,7 +148,11 @@ export class Command {
           flags: [MessageFlags.Ephemeral],
         });
       }
-      command.run(interaction, client, args);
+      try {
+        await command.run(interaction, client, args);
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 }

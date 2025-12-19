@@ -1,12 +1,15 @@
 import { Client, ApplicationCommandDataResolvable } from "discord.js";
 import { Command } from "./command";
+import {Bot} from "../bot";
 
 export class CommandManager {
     private client: Client;
+    private bot: Bot;
     private static commands: Map<string, Command> = new Map(); // Store commands globally
 
-    constructor(client: Client) {
+    constructor(client: Client, bot: Bot) {
         this.client = client;
+        this.bot = bot;
     }
 
     async registerCommand(command: Command) {
@@ -20,9 +23,15 @@ export class CommandManager {
     async registerCommands(guildId?: string) {
         const commandsArray: ApplicationCommandDataResolvable[] = Array.from(CommandManager.commands.values());
 
+
+
         if (commandsArray.length === 0) {
             console.log("⚠️ No commands have been registered.");
             return;
+        }
+        const allCommands = CommandManager.getAllCommands();
+        for (const command of allCommands) {
+            console.log(command)
         }
 
         if (guildId) {

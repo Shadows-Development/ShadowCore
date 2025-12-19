@@ -25,7 +25,11 @@ export class MenuManager {
       menu = MenuManager.menus.get(interaction.customId);
     }
     if (menu) {
-      await menu.run(interaction, this.client);
+      try {
+        await menu.run(interaction, this.client);
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
     static getAllMenus(): Map<string, Menu> {

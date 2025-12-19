@@ -50,13 +50,13 @@ export const bot = new Bot(
     'GuildMessages',
     'MessageContent'
   ],
-  false // Debug mode disabled
+  false, // Debug mode disabled
+  GUILD_ID
 );
 
 // Log when the bot is ready
 bot.getClient().once('ready', () => {
   console.log(\`✅ Logged in as \${bot.getClient().user?.tag}\`);
-  bot.getCommandManager().registerCommands(GUILD_ID);
 });
 `;
 
@@ -248,8 +248,6 @@ export default new Event(
   'ready',
   async (client) => {
     console.log('✅ Logged in as', client.user?.tag);
-    const GUILD_ID = 'YOUR_GUILD_ID'; // Replace with your server's ID
-    await bot.getCommandManager().registerCommands(GUILD_ID);
   },
   true
 );
