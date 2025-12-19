@@ -40,7 +40,7 @@ export class PluginLoader {
     for (const filePath of pluginFiles) {
       const pluginDirPath = path.dirname(filePath);
       const pluginJsonPath = path.join(pluginDirPath, "plugin.json");
-
+      const pluginFolderName = path.basename(pluginDirPath);
       let meta: metadata = {} as metadata;
 
       if (fs.existsSync(pluginJsonPath)) {
@@ -54,12 +54,12 @@ export class PluginLoader {
 
       try {
         const pluginModule: Plugin = await importFile(filePath);
-
+        await registerModule<Command>(`plugins/${pluginFolderName}/commands`, this.bot.getCommandManager(), this.bot.client, this.bot.debug);
+        await registerModule<Button>(`plugins/${pluginFolderName}/buttons`, this.bot.getButtonManager(), this.bot.client, this.bot.debug);
+        await registerModule<Menu>(`plugins/${pluginFolderName}/menus`, this.bot.getMenuManager(), this.bot.client, this.bot.debug);
         if (pluginModule?.register) {
           pluginModule.metadata = meta;
-          await registerModule<Command>(`plugins/${filePath}/commands`, this.bot.getCommandManager(), this.bot.client, this.bot.debug);
-          await registerModule<Button>(`plugins/${filePath}/buttons`, this.bot.getButtonManager(), this.bot.client, this.bot.debug);
-          await registerModule<Menu>(`plugins/${filePath}/menus`, this.bot.getMenuManager(), this.bot.client, this.bot.debug);
+
           pluginModule.register(this.bot.client);
 
           if (this.debug) {

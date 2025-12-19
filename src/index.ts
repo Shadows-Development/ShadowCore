@@ -5,3 +5,4 @@ export * from "./security";
 export { ApiKey } from "./nest";
 export * from "./nest";
 export * from "./types";
+export * from "./eventbus";
