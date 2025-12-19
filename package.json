@@ -96,4 +96,3 @@
     "./nest/services/token.service": "./dist/nest/services/token.service.js"
   }
 }
-
